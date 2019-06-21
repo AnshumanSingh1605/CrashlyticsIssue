@@ -1,5 +1,5 @@
 //
-//  APIHandler.swift
+//  PermissionModel.swift
 //  CrashlyticsIssue
 //
 //  Created by Anshuman Singh on 6/19/19.
@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+public struct PermissionModel : Codable {
+     let admin : Bool?
+     let pull : Bool?
+     let push : Bool?
+}
+

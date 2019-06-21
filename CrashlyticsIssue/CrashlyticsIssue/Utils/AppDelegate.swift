@@ -16,7 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //check wheather the data is more than 24 hours old , or not.
+        if checkToUpdateData() {
+            //if data is been there for more than 24 hours.
+            
+            //Deleting the old data.
+            DBHandler.deleteAllData()
+        }
         return true
     }
 
@@ -43,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
-
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
